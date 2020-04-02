@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flip Card Effect</title>
+  </head>
+  <body>
+    <div class="card cent">
+      <div class="front">
+        <img src="logo.png" alt="">
+      </div>
+      <div class="back">
+        <div class="cent">
+          <h1>YouTube Channel</h1>
+          <div class="statyst">
+            <div class="stat">
+              <p>Subscribers</p>
+              <span>13</span>
+            </div>
+            <div class="stat">
+              <p>Likes</p>
+              <span>13</span>
+            </div>
+            <div class="stat">
+              <p>Views</p>
+              <span>424</span>
+            </div>
+            <div class="stat">
+              <p>Hours</p>
+              <span>6,6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style media="screen">
+      body{
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(120deg, #ED4C67,#0652DD);
+        min-height: 100vh;
+        text-align: center;
+        font-family: sans-serif;
+      }
+      .cent{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .card{
+        cursor: pointer;
+        width: 500px;
+        height: 500px;
+      }
+      .front, .back{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        transition: transform 2s linear;
+        border-radius: 50%;
+        box-shadow:1px 5px 24px #c8d6e5;
+      }
+      .front img{
+        height: 100%;
+      }
+      .back h1{
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+      .statyst .stat{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        box-shadow: 1px 5px 24px #c8d6e5;
+        display: inline-block;
+        padding: 10px;
+        margin: 11px;
+      }
+      .stat p{
+        font-size: 12px;
+        margin-top: 15px;
+        font-weight: 600;
+      }
+      .stat span{
+        font-size: 20px;
+      }
+      .front{
+        background: #fff;
+        transform: perspective(600px) rotateY(0deg);
+      }
+      .back{
+        background: #fff;
+        transform: perspective(600px) rotateY(180deg);
+      }
+      .card:hover > .front{
+        transform: perspective(600px) rotateY(-180deg);
+      }
+      .card:hover > .back{
+        transform: perspective(600px) rotateY(0deg);
+      },
+    </style>
+  </body>
+</html>
